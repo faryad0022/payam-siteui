@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "80cc30ae-6792-4259-91c9-a833ade2cb3e"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -31,9 +34,27 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+               "src/assets/css/style.css",
+               "src/assets/css/zebra.css",
+               "src/assets/css/dr-framework.css",
+               "src/assets/css/navigation.css",
+               "src/assets/css/revslider.css",
+               "src/assets/css/jquery.bxslider.css",
+               "src/assets/css/responsive.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery.flexslider.js",
+              "src/assets/js/jquery.superfish.js",
+              "src/assets/js/script.js",
+              "src/assets/js/zebra_datepicker.js",
+              "src/assets/js/core.js"
+          
+            ]
           },
           "configurations": {
             "production": {
