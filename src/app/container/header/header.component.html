@@ -1,12 +1,24 @@
-<header class="sticky-top" style="opacity: 0.6;">
+<header class="sticky-top">
 
 
+    <div class="subheader clearfix">
+        <div class="inner-subheader">
+            <div class="phone">+38646 123 456</div>
 
+            <div class="subheader2">
+                <ul>
+                    <li><a [routerLink]="['/']" routerLinkActive="router-link-active" >صفحه اصلی</a></li>
+                    <li><a [routerLink]="['/gallery']" routerLinkActive="router-link-active" >گالری</a></li>
+                    <li><a [routerLink]="['/blogs']" routerLinkActive="router-link-active" >وبلاگ</a></li>
+                </ul>				
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <div class="logo">
-                <a href="#"><img src="../../../assets/images/logo.png" alt=""></a>
+                <a class="mr-3" href="#"><img src="../../../assets/images/logo.png" alt=""></a>
             </div> <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -14,7 +26,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item" >
                         <a class="nav-link active" aria-current="page" [routerLink]="['/']"
                             routerLinkActive="router-link-active">صفجه اصلی</a>
                     </li>
