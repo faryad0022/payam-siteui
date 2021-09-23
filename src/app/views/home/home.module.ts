@@ -7,8 +7,9 @@ import { RecentNewsComponent } from './recent-news/recent-news.component';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { RouterModule } from '@angular/router';
-
-
+import { SliderService } from 'src/app/core/services/slider/slider.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from 'src/app/core/config/interceptor/interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,16 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
+  ],
+  providers: [
+    SliderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
   ]
 })
 export class HomeModule { }
