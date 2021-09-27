@@ -2,230 +2,62 @@
 	<div class="inner-banner">
 		<div class="note">گالری تصاویر</div>
 		<div class="site-map">
-    	<a href="index.html">خانه</a> &gt; گالزی تصاویر
+			<a href="index.html">خانه</a> &gt; گالزی تصاویر
 		</div>
-	<div class="clear"></div>
+		<div class="clear"></div>
 	</div>
-	</div>
-	
+</div>
 
-	<!-- Container -->
-	<div class="wrapper">
+
+<!-- Container -->
+<div class="wrapper">
 
 	<div id="container">
-  <ul id="filterOptions">
-    <li class="active"><a href="#" class="all">همه</a></li>
-    <li><a href="#" class="child">فرزندان</a></li>
-    <li><a href="#" class="heart">قلب</a></li>
-    <li><a href="#" class="diabet">دیابت</a></li>
-    <li><a href="#" class="treat">درمان</a></li>
-    <li><a href="#" class="health">سلامتی</a></li>
-    <li><a href="#" class="medical">دستگاه های پزشکی</a></li>
-  </ul>
-  
-  <div id="ourHolder">
-    <div class="item treat">
-	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio1.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+			  <li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+				  <span aria-hidden="true">&laquo;</span>
+				</a>
+			  </li>
+			  <li class="page-item"><a class="page-link" href="#">1</a></li>
+			  <li class="page-item"><a class="page-link" href="#">2</a></li>
+			  <li class="page-item"><a class="page-link" href="#">3</a></li>
+			  <li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+				  <span aria-hidden="true">&raquo;</span>
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		<div id="ourHolder" *ngIf="filterImage !== undefined">
+			<div class="item treat" *ngFor="let image of filterImage.images">
+				<div class="view view">
+					<img [src]="domainName + '/images/gallery/origin/'+image.imageName" alt="{{image.description}}" />
+				
+				</div>
+			</div>
+
 		</div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+			  <li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+				  <span aria-hidden="true">&laquo;</span>
+				</a>
+			  </li>
+			  <li class="page-item"><a class="page-link" href="#">1</a></li>
+			  <li class="page-item"><a class="page-link" href="#">2</a></li>
+			  <li class="page-item"><a class="page-link" href="#">3</a></li>
+			  <li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+				  <span aria-hidden="true">&raquo;</span>
+				</a>
+			  </li>
+			</ul>
+		  </nav>
 	</div>
-      <div class="port-span">
-	      <h3>مراقبت از دندان</h3>
-	      <span>رفتار, سلامتی</span>
-      </div>
-    </div>
-    <div class="item child">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio2.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>دیابت رفتار</h3>
-	      <span>child, diabet</span>
-      </div>
-    </div>
-    <div class="item medical">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio3.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>گاستروسکوپی</h3>
-	      <span>معده، دستگاه گوارش</span>
-      </div>
-    </div>
-    <div class="item heart">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio4.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>داروها بهداشت</h3>
-	      <span>کودک، قلب</span>
-      </div>
-    </div>
-    <div class="item heart health">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio5.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>جراحی لیزیک چشم</h3>
-	      <span>چشم، لیزر</span>
-      </div>
-    </div>
-    <div class="item child">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio6.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item treat">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio7.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item child">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio8.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item diabet">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio9.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item medical">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio10.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item diabet">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio11.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item heart">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio12.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item medical">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio13.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item heart">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio14.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>    
-    <div class="item child">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio15.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>
-    <div class="item health child">
-      	<div class="view view-two"> 
-		<img src="../../../assets/images/portfolio16.jpg" alt="" /> 
-		<div class="mask"> 
-			<a class="btn-icon" href="#"></a> 
-			<a class="btn-icon2" href="#"></a> 
-		</div>
-	</div>
-      <div class="port-span">
-	      <h3>دکتر</h3>
-	      <span>کودکان، بهداشت</span>
-      </div>
-    </div>    
-  </div>
+
 </div>
-      
-	</div>
-	<!-- End Wrapper -->
+<!-- End Wrapper -->
