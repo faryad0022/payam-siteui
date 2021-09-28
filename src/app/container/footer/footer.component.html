@@ -27,11 +27,17 @@
 			<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
 		</div>
 
-		<div class="contact column3">
+		<div class="contact column3" *ngIf="addresses.length">
 			<h4>تماس با ما</h4>
-			<p>Barnamenevisan@domain.com</p>
-			<p>+38649 123 456 789 00</p>
-			<p>تهران-شریعتی-خ مللک</p>
+			<div *ngFor="let addr of addresses">
+				<p>{{addr.city}}</p>
+				<p>{{addr.address}}</p>
+				<p>{{addr.cellPhone}}</p>
+				<p>{{addr.telephone}}</p>
+				<p>{{addr.workHour}}</p>
+				<br/>
+			</div>
+
 		</div>
 		<div class="clear"></div>
 		<!-- End Contact -->

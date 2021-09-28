@@ -3,7 +3,11 @@
 
     <div class="subheader clearfix">
         <div class="inner-subheader">
-            <div class="phone">+38646 123 456</div>
+            <div class="phone" *ngIf="defaultMobile">
+                <h4>
+                    {{defaultMobile}}
+                </h4>
+            </div>
 
             <div class="subheader2">
                 <ul>
