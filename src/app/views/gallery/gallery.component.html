@@ -13,23 +13,39 @@
 <div class="wrapper">
 
 	<div id="container">
-
 		<nav aria-label="Page navigation example">
-			<ul class="pagination">
-			  <li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
+			<ul class="pagination justify-content-center">
+				<!-- Example single danger button -->
+
+			  <li 
+			  class="page-item cursor-pointer" 
+			  (click) = "prevPage()">
+
+				<a class="page-link" aria-label="Previous">
 				  <span aria-hidden="true">&laquo;</span>
 				</a>
 			  </li>
-			  <li class="page-item"><a class="page-link" href="#">1</a></li>
-			  <li class="page-item"><a class="page-link" href="#">2</a></li>
-			  <li class="page-item"><a class="page-link" href="#">3</a></li>
-			  <li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
+			  <li 
+			  class="page-item cursor-pointer" 
+			  (click) = "setPage(page)"
+			  [ngClass]="{active: page === filterImage.activePage}" 
+			  *ngFor="let page of pages">
+				  <a class="page-link ">{{page}}</a>
+			  </li>
+
+			  <li 
+			  class="page-item cursor-pointer"
+			  (click) = "nextPage()">
+ 
+			  
+				<a class="page-link" aria-label="Next">
 				  <span aria-hidden="true">&raquo;</span>
 				</a>
 			  </li>
+
+			
 			</ul>
+			
 		  </nav>
 		<div id="ourHolder" *ngIf="filterImage !== undefined">
 			<div class="item treat" *ngFor="let image of filterImage.images">
@@ -41,21 +57,38 @@
 
 		</div>
 		<nav aria-label="Page navigation example">
-			<ul class="pagination">
-			  <li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
+			<ul class="pagination justify-content-center">
+				<!-- Example single danger button -->
+
+			  <li 
+			  class="page-item cursor-pointer" 
+			  (click) = "prevPage()">
+
+				<a class="page-link" aria-label="Previous">
 				  <span aria-hidden="true">&laquo;</span>
 				</a>
 			  </li>
-			  <li class="page-item"><a class="page-link" href="#">1</a></li>
-			  <li class="page-item"><a class="page-link" href="#">2</a></li>
-			  <li class="page-item"><a class="page-link" href="#">3</a></li>
-			  <li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
+			  <li 
+			  class="page-item cursor-pointer" 
+			  (click) = "setPage(page)"
+			  [ngClass]="{active: page === filterImage.activePage}" 
+			  *ngFor="let page of pages">
+				  <a class="page-link ">{{page}}</a>
+			  </li>
+
+			  <li 
+			  class="page-item cursor-pointer"
+			  (click) = "nextPage()">
+ 
+			  
+				<a class="page-link" aria-label="Next">
 				  <span aria-hidden="true">&raquo;</span>
 				</a>
 			  </li>
+
+			
 			</ul>
+			
 		  </nav>
 	</div>
 
