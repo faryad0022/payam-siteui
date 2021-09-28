@@ -24,7 +24,9 @@
 
 		<div class="text-widget column3">
 			<h4>ویجت متن</h4>
-			<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
+			<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+				متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+				کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
 		</div>
 
 		<div class="contact column3" *ngIf="addresses.length">
@@ -35,7 +37,7 @@
 				<p>{{addr.cellPhone}}</p>
 				<p>{{addr.telephone}}</p>
 				<p>{{addr.workHour}}</p>
-				<br/>
+				<br />
 			</div>
 
 		</div>
@@ -50,17 +52,23 @@
 	<div class="end-footer">
 		<div class="lastdiv">
 			<div class="copyleft">
-				©کلیه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد 
+				©کلیه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد
 			</div>
 
-			<div class="f-socials">
-				<a href="#"><img src="../../../assets/images/feed.png" alt=""></a>
-				<a href="#"><img src="../../../assets/images/tweet.png" alt=""></a>
-				<a href="#"><img src="../../../assets/images/fcb.png" alt=""></a>
-				<a href="#"><img src="../../../assets/images/gplus.png" alt=""></a>
-				<a href="#"><img src="../../../assets/images/pin.png" alt=""></a>
+			<div class="f-socials" *ngIf="socials.length">
+
+					<a
+					*ngFor="let social of socials"  
+					style="cursor: pointer; text-decoration: none;" (click)="gotoUrl(social.link)" >
+						<i 
+						[className]="social.icon"
+						style="margin-right: 8px;">
+						</i>
+					</a>
+
+
 			</div>
-		<div class="clear"></div>
+			<div class="clear"></div>
 		</div>
 	</div>
-	</footer>
+</footer>

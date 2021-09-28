@@ -42,6 +42,7 @@
                "src/assets/css/revslider.css",
                "src/assets/css/jquery.bxslider.css",
                "src/assets/css/responsive.css",
+               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],
@@ -49,6 +50,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
               "src/assets/js/jquery.min.js",
               "src/assets/js/jquery.flexslider.js",
               "src/assets/js/jquery.superfish.js",
