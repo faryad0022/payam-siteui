@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "angular-fontawesome": "^1.0.0",
+    "angular-recaptcha3": "^2.0.0",
     "bootstrap": "^5.1.1",
     "jquery": "^3.6.0",
     "ngx-toastr": "^14.1.3",
