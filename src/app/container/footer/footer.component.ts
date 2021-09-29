@@ -27,10 +27,6 @@ export class FooterComponent implements OnInit {
     this.addressService.getSocials().subscribe(socialRes=> {
       
       this.socials = socialRes.data;
-      console.log(this.socials);
-      console.log(this.socials[1].icon);
-      
-      
     });
   }
   gotoUrl(link: string) : void {

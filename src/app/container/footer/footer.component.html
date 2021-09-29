@@ -22,21 +22,43 @@
 			</ul>
 		</div>
 
-		<div class="text-widget column3">
-			<h4>ویجت متن</h4>
-			<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
-				متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-				کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
+		<div class="text-widget column3 ">
+			<h4>شبکه های اجتماعی</h4>
+			<div *ngIf="socials.length">
+
+				<a
+				class="text-white "
+				*ngFor="let social of socials"  
+				style="cursor: pointer; text-decoration: none;" 
+				(click)="gotoUrl(social.link)" >
+					<i 
+					[className]="social.icon"
+					style="margin-right: 8px;">
+					</i>
+				</a>
+
+
+		</div>
 		</div>
 
 		<div class="contact column3" *ngIf="addresses.length">
 			<h4>تماس با ما</h4>
 			<div *ngFor="let addr of addresses">
-				<p>{{addr.city}}</p>
-				<p>{{addr.address}}</p>
-				<p>{{addr.cellPhone}}</p>
-				<p>{{addr.telephone}}</p>
-				<p>{{addr.workHour}}</p>
+				<p>
+					<i class="fas fa-city"></i>
+					{{addr.city}}</p>
+				<p>
+					<i class="fas fa-map-marker-alt"></i>
+					{{addr.address}}</p>
+				<p>
+					<i class="fas fa-mobile"></i>
+					{{addr.cellPhone}}</p>
+				<p>
+					<i class="fas fa-phone"></i>
+					{{addr.telephone}}</p>
+				<p>
+					<i class="fas fa-clock"></i>
+					{{addr.workHour}}</p>
 				<br />
 			</div>
 
@@ -55,19 +77,7 @@
 				©کلیه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد
 			</div>
 
-			<div class="f-socials" *ngIf="socials.length">
 
-					<a
-					*ngFor="let social of socials"  
-					style="cursor: pointer; text-decoration: none;" (click)="gotoUrl(social.link)" >
-						<i 
-						[className]="social.icon"
-						style="margin-right: 8px;">
-						</i>
-					</a>
-
-
-			</div>
 			<div class="clear"></div>
 		</div>
 	</div>

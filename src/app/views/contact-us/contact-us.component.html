@@ -12,29 +12,113 @@
 
 	<!-- Container -->
 	<div class="wrapper">
+
 		<div class="contact-row dark">
 			<div class="contact2 column4">
 				<h4>اطلاعات تماس</h4>
 				<div class="border"></div>
-				<p class="home">لورم ایپسوم متن</p>
-				<p class="phone2">+399 (500) 321 9548</p>
-				<p class="mail">info@barnamenevisan.org</p>
+				<div *ngFor="let addr of addresses">
+				
+					<p>
+						<i class="fas fa-city"></i>
+						{{addr.city}}</p>
+					<p>
+						<i class="fas fa-map-marker-alt"></i>
+						{{addr.address}}</p>
+					<p>
+						<i class="fas fa-mobile"></i>
+						{{addr.cellPhone}}</p>
+					<p>
+						<i class="fas fa-phone"></i>
+						{{addr.telephone}}</p>
+					<p>
+						<i class="fas fa-clock"></i>
+						{{addr.workHour}}</p>
+					<br />
+				</div>
+
 			</div>
 
 
 			<div class="msg-form column8">
 				<h4>ارسال پیام</h4>
 				<div class="border"></div>
-				<form  id="contact-form" action="#">
-					<input name="name" id="name" type="text" data-value="نام">
-					<input name="mail" id="mail" type="text" data-value="ایمیل">
-					<input name="subject" id="subject" type="text" data-value="وب سایت">
-					<textarea name="comment" id="comment"placeholder="پیام"></textarea>
-					<input type="submit" id="submit_contact" value="ارسال">
+				<form dir="rtl" [formGroup]="messageForm" (ngSubmit)="Submit()">
+					<div class="row">
+						<div class="col">
+							<mat-form-field class="w-100"  appearance="outline">
+								<mat-label>نام و نام خانوادگی</mat-label>
+								<input matInput formControlName="name">
+								<mat-error
+								  *ngIf="messageForm.controls['name'].hasError('required') && messageForm.controls['name'].touched">
+								  لطفا نام و نام خانوادگی خود را وارد نمایید...
+								</mat-error>
+							  </mat-form-field>	
+						</div>
+						<div class="col">
+							<mat-form-field class="w-100" appearance="outline">
+								<mat-label>ایمیل</mat-label>
+								<input matInput formControlName="email">
+								<mat-error
+								  *ngIf="messageForm.controls['email'].hasError('required') && messageForm.controls['email'].touched">
+								  لطفا ایمیل را وارد نمایید...
+								</mat-error>
+								<mat-error *ngIf="messageForm.controls['email'].hasError('email') && messageForm.controls['email'].touched">
+								  لطفا ایمیل را صحیح وارد نمایید...
+								</mat-error>
+							  </mat-form-field>	
+						</div>
+					</div>
+
+
+					 <mat-form-field class="w-50" appearance="outline">
+						<mat-label>شماره تماس</mat-label>
+						<input matInput formControlName="telephone">
+						<mat-error
+						  *ngIf="messageForm.controls['telephone'].hasError('required') && messageForm.controls['telephone'].touched">
+						  لطفا شماره تماس را وارد نمایید...
+						</mat-error>
+						<mat-error *ngIf="messageForm.controls['telephone'].hasError('maxlength') && messageForm.controls['telephone'].touched">
+							شماره تماس حداکثر 20 عدد است...
+						  </mat-error>
+					  </mat-form-field>	
+					  
+					 <br/>
+					 <mat-form-field class="w-100" appearance="outline">
+						<mat-label>موضوع</mat-label>
+						<input matInput formControlName="title">
+						<mat-error
+						  *ngIf="messageForm.controls['title'].hasError('required') && messageForm.controls['title'].touched">
+						  لطفا موضوع را وارد نمایید...
+						</mat-error>
+						<mat-error *ngIf="messageForm.controls['title'].hasError('maxlength') && messageForm.controls['title'].touched">
+							موضوع حداکثر 100 کلمه است...
+						  </mat-error>
+					  </mat-form-field>	
+					  <br/>
+					  <mat-form-field class="w-100" appearance="outline">
+						<mat-label>متن</mat-label>
+						<textarea  matInput formControlName="description"></textarea>
+						<mat-error
+						  *ngIf="messageForm.controls['description'].hasError('required') && messageForm.controls['description'].touched">
+						لطفا پیغام خودرا وارد نمائید
+						</mat-error>
+						<mat-error *ngIf="messageForm.controls['description'].hasError('maxlength') && messageForm.controls['description'].touched">
+							متن پیغام حداکثر 500 کاراکتر است
+						  </mat-error>
+					  </mat-form-field>	
+					  <br />
+					  <section>
+						  <div class="pull-left">
+							<button [disabled]="!messageForm.valid||!messageForm.dirty" mat-raised-button class="pull-left" color="primary">ارسال</button>
+
+						  </div>
+					  </section>
 	  				<div id="msg" class="message"></div>
 				</form>
 			</div>
 			<div class="clear"></div>
+			
 		</div>
 	</div>
 	<!-- End Wrapper -->
