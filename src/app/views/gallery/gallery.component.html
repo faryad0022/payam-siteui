@@ -48,10 +48,10 @@
 			
 		  </nav>
 		<div id="ourHolder" *ngIf="filterImage !== undefined">
-			<div class="item treat" *ngFor="let image of filterImage.images">
-				<div class="view view">
-					<img [src]="domainName + '/images/gallery/origin/'+image.imageName" alt="{{image.description}}" />
-				
+			<div class="item" *ngFor="let image of filterImage.images, let i = index">
+				<div class="view view"  >
+					<img [src]="domainName + '/images/gallery/origin/'+image.imageName"  alt="{{image.description}}" (click)="openLightBox(i)"/>
+
 				</div>
 			</div>
 

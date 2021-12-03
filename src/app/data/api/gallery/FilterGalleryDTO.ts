@@ -2,10 +2,8 @@ import { GalleryDTO } from "./GalleryDTO";
 
 export class FilterGalleryDTO {
     constructor(
-         public title: string,
-    public images: GalleryDTO[],
-
-
+        public title: string,
+        public images: GalleryDTO[],
         public pageId:number,
         public pageCount: number,
         public activePage: number,

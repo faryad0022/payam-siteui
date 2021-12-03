@@ -176,7 +176,6 @@ header {
 .inner-form {
    position: absolute;
   width: 1170px;
-  height: 148px;
   bottom: 0px;
   margin: auto;
   background: #000;
@@ -297,8 +296,8 @@ border-top-right-radius: 10px;
 
 
 .l-more {
-  margin: 25px 0;
-}
+  margin-top: 165px;
+  margin-bottom: 65px;}
 
 .l-banner {
    background: #2190d7;
@@ -1139,7 +1138,7 @@ ul#filterOptions li.active a { background: #2190d7; color:  #fff; }
   float: right;
   text-align: center;
   margin-right:  20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 

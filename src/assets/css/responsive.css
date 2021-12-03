@@ -41,7 +41,7 @@
 
     .book-form {
     width: 940px;
-    }
+    margin-top: 237px    }
     .inner-form {
     width: 940px;
     margin: auto;
@@ -145,7 +145,7 @@
 
     #ourHolder div.item {
     width: 215px;
-    height: 210px
+    height: 210px;
     }
 
     .view-two .mask .btn-icon2 {
@@ -219,13 +219,14 @@
 
     .book-form {
     width: 724px;
+    margin-top: 15px;
     }
 
     .inner-form {
     width: 724px;
     margin: auto;
     position: static;
-    height: 218px;
+    height: 236px;
     }
 
     .book-form h4 {
@@ -425,7 +426,7 @@
     }
     .inner-form {
     width: 440px;
-    height: 428px;
+    height: 448px;
     }
     
     .inputs {
@@ -653,6 +654,7 @@
 
     .book-form {
     width: 300px;
+    margin-top: 15px;
     }
 
     .inner-form {

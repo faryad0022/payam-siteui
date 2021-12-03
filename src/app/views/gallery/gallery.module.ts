@@ -6,6 +6,7 @@ import { GalleryRoutingModule } from './gallery-routing.module';
 import { ImageService } from 'src/app/core/services/gallery/image.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/config/interceptor/interceptor';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { Interceptor } from 'src/app/core/config/interceptor/interceptor';
     CommonModule,
     RouterModule,
     GalleryRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LightboxModule
   ],
   providers: [
     ImageService,
