@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ContactUsService } from 'src/app/core/services/contact-us/contact-us.service';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -22,7 +23,9 @@ import { ContactUsService } from 'src/app/core/services/contact-us/contact-us.se
     ReactiveFormsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    SweetAlert2Module.forRoot()
+
   ],
   providers: [
     AddressService,

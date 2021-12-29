@@ -15,6 +15,7 @@ import {
 } from "ngx-ui-loader";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from './core/config/interceptor/interceptor';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
@@ -43,6 +44,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     {

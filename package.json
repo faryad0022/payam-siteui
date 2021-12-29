@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@sweetalert2/ngx-sweetalert2": "^10.0.0",
     "angular-fontawesome": "^1.0.0",
     "angular-recaptcha3": "^2.0.0",
     "bootstrap": "^5.1.1",
@@ -32,6 +33,7 @@
     "ngx-toastr": "^14.1.3",
     "ngx-ui-loader": "^11.0.0",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.3.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

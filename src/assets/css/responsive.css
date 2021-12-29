@@ -249,6 +249,8 @@
     width: 186px;
     }
 
+
+
     .l-more p {
     font-size: 16px;
     width: 73%;
@@ -446,7 +448,12 @@
     padding: 19px 40px;
     margin-top: 15px;
     }
-
+    .book-form button[type="submit"] {
+      width: 393px;
+      color: #fff;
+      padding: 19px 40px;
+      margin-top: 15px;
+      }
     .l-more p {
     font-size: 16px;
     width: 100%;
@@ -675,7 +682,9 @@
     .book-form input[type="submit"] {
     width: 260px;
     }
-
+    .book-form button[type="submit"] {
+    width: 260px;
+    }
 
     .inner-footer {
      width: 300px;   

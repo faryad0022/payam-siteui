@@ -3,12 +3,12 @@
 
       <h4><img src="../../../../assets/images/calendar.png" alt="">رزرو وقت ملاقات
       </h4>
-      <form id="contact-form2" action="#">
+      <form [formGroup]="appointmentForm" id="contact-form2" (ngSubmit)="SendAppointmentRequest()">
         <div class="inputs">
-          <input name="name" id="name" type="text" data-value="نام">
-          <input name="mail" id="mail" type="text" data-value="آدرس ایمیل">
-          <input name="phone" id="phone" type="text" data-value="تلفن همراه">
-          <input name="date" id="date" type="text" data-value="DD / MM / YYYY 00:00">
+          <input name="name" id="name" formControlName="name" placeholder="نام و نام خانوادگی" type="text" />
+          <input name="mail" id="mail" formControlName = "email" placeholder="ایمیل" type="text" />
+          <input name="phone" id="phone" formControlName="telephone" placeholder="تلفن" type="text" />
+          <input name="cellPhone" id="date" formControlName="cellPhone" placeholder="موبایل" type="text" >
         </div>
 
         <input id="submit_contact2" type="submit" value="قرار ملاقات">

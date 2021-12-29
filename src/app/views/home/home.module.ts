@@ -10,6 +10,12 @@ import { RouterModule } from '@angular/router';
 import { SliderService } from 'src/app/core/services/slider/slider.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/config/interceptor/interceptor';
+import { AppointmentService } from 'src/app/core/services/appointment/appointment.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -23,10 +29,18 @@ import { Interceptor } from 'src/app/core/config/interceptor/interceptor';
     CommonModule,
     HomeRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    SweetAlert2Module.forRoot()
+
   ],
   providers: [
     SliderService,
+    AppointmentService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
