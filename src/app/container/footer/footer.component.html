@@ -2,25 +2,15 @@
 	<div class="inner-footer dark">
 
 		<div class="about column3">
-			<h4>درباره ما</h4>
+			<h4>دسترسی سریع</h4>
 			<ul>
-				<li><a href="#">ما کی هستیم</a></li>
-				<li><a href="#">چه کار می کنیم</a></li>
-				<li><a href="#">آنچه ما ارائه می دهیم</a></li>
-				<li><a href="#">ماموریت ما</a></li>
-				<li><a href="#">دیدگاه ما</a></li>
+				<li><a [routerLink]="['/gallery']">گالری تصاویر</a></li>
+				<li><a [routerLink]="['/blogs/list']" >بلاگ ها </a></li>
+				<li><a [routerLink]="['/contactus']">تماس با ما</a></li>
+
 			</ul>
 		</div>
 
-		<div class="service column3">
-			<h4>خدمات</h4>
-			<ul>
-				<li><a href="#">دندان های سفید</a></li>
-				<li><a href="#">دندانپزشکی</a></li>
-				<li><a href="#">اشعه ایکس</a></li>
-				<li><a href="#">خدمات</a></li>
-			</ul>
-		</div>
 
 		<div class="text-widget column3 ">
 			<h4>شبکه های اجتماعی</h4>
@@ -41,7 +31,7 @@
 		</div>
 		</div>
 
-		<div class="contact column3" *ngIf="addresses.length">
+		<div class="contact column6" *ngIf="addresses.length">
 			<h4>تماس با ما</h4>
 			<div *ngFor="let addr of addresses">
 				<p>
@@ -74,7 +64,7 @@
 	<div class="end-footer">
 		<div class="lastdiv">
 			<div class="copyleft">
-				©کلیه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد
+				©کلیه حقوق مادی و معنوی برای دکتر پیام ابوالحسنی محفوظ می باشد
 			</div>
 
 

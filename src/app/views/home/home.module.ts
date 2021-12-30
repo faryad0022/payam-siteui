@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { BlogGroupService } from 'src/app/core/services/blog/blogGroup.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
   ],
   providers: [
     SliderService,
+    BlogGroupService,
     AppointmentService,
     {
       provide: HTTP_INTERCEPTORS,

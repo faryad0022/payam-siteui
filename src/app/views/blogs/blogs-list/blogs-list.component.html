@@ -1,0 +1,73 @@
+<div class="banner">
+  <div class="inner-banner">
+      <div class="note">وبلاگ</div>
+      <div class="site-map">
+
+
+        <a [routerLink]="['/']" routerLinkActive="router-link-active" >خانه</a> &gt; وبلاگ
+      </div>
+      <div class="clear"></div>
+  </div>
+</div>
+<div class="wrapper">
+  <ul id="filterOptions">
+      <li style="cursor: pointer;" class="active"><a (click)="getFilterBlog('All')" class="all">همه</a></li>
+      <li style="cursor: pointer;" *ngFor="let blogGroup of blogGroups">
+          <a class="all" (click)="getFilterBlog(blogGroup)">{{blogGroup.title}}</a>
+          
+      </li>
+  </ul>
+</div>
+
+<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+<!-- Container -->
+<div class="wrapper dark">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-start">
+      <!-- Example single danger button -->
+
+      <li style="cursor: pointer;" class="page-item cursor-pointer" (click)="prevPage()">
+
+        <a class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li style="cursor: pointer;" class="page-item cursor-pointer" (click)="setPage(page)"
+        [ngClass]="{active: page === filterBlog.activePage}" *ngFor="let page of pages">
+        <a class="page-link ">{{page}}</a>
+      </li>
+
+      <li style="cursor: pointer;" class="page-item cursor-pointer" (click)="nextPage()">
+
+
+        <a class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+
+
+    </ul>
+
+  </nav>
+  <div class="main-blog column9">
+      <div *ngFor="let blog of blogs" class="blog-box">
+          <a><img [src]="domainName + '/images/blog/origin/'+blog.imageName" alt="{{blog.title}}"></a>
+          <div class="blog-text">
+              <h4>{{blog.title}}</h4>
+              <div class="border"></div>
+              <div class="post-meta">
+                  <div class="post-date">18 September, 2013</div>
+                  <div class="clear"></div>
+              </div>
+              <div class="post-text">
+                  {{blog.title}}
+              </div>
+              <a [routerLink]="['/blogs/blog',blog.id, blog.title]" routerLinkActive="router-link-active" >ادامه مطلب</a>
+          </div>
+      </div>
+
+      <div class="clear"></div>
+  </div>
+  <!-- Aside Blog -->
+
+  <!-- End Wrapper -->
