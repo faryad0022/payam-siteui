@@ -20,11 +20,9 @@ export class AboutComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subManager.add(
       this.aboutService.getAboutPage().subscribe(res=> {
-        console.log(res);
         
         if(res.status === "Success"){
           this.text = res.data.text;
-          console.log(this.text);
           
         }
       })

@@ -3,9 +3,5 @@ export class Slider {
         public id: number,
         public description: string,
         public imageName: string,
-        public isDelete: boolean,
-        public link: string,
-        public createDate: Date,
-        public lastUpdateDate: Date
     ){}
 }

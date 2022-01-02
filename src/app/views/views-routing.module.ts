@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { MainPageResolver } from '../core/resolvers/mainPage.resolver';
 import {ViewsComponent} from './views.component';
 
 const routes: Routes = [{
@@ -13,6 +14,7 @@ const routes: Routes = [{
             {
                 path: 'home',
                 loadChildren: () => import ('./home/home.module').then(m => m.HomeModule)
+                
             },
             {
                 path: 'contactus',

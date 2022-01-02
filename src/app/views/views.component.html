@@ -1,11 +1,12 @@
-<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
 <!-- Start Header -->
-<app-header></app-header>
+<app-header [defaultMobile]="defaultMobile"></app-header>
 <!-- End Header -->
+
+
 <router-outlet></router-outlet>
 
 <!-- Footer -->
-<app-footer></app-footer>
+<app-footer [addresses]="mainPageDetails.addresses" [socials]="mainPageDetails.socials" ></app-footer>
 
 
 

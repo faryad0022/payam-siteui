@@ -1,3 +1,4 @@
 import { environment } from "src/environments/environment"
 
-export const DomainName = environment.production ? 'https://www.dr-payamabolhassani.com' : 'https://localhost:44389';
+export const DomainName = 'https://dr-payamabolhassani.com' ;
+//export const DomainName = 'https://localhost:44389' ;

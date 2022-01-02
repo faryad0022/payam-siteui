@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ChildActivationStart } from '@angular/router';
-import { AddressService } from 'src/app/core/services/address/address.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { AddressDTO } from 'src/app/data/api/address/addressDTO';
 import { SocialDTO } from 'src/app/data/api/address/socialDTO';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -13,21 +11,12 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent implements OnInit {
   faCoffee = faCoffee;
 
-  addresses: AddressDTO[] = [];
-  socials: SocialDTO[] = [];
+  @Input() addresses: AddressDTO[];
+  @Input() socials: SocialDTO[];
   constructor(
-    private addressService: AddressService
   ) { }
 
   ngOnInit(): void {
-    this.addressService.getAddresses().subscribe(res=> {
-      this.addresses = res.data;
-      
-    });
-    this.addressService.getSocials().subscribe(socialRes=> {
-      
-      this.socials = socialRes.data;
-    });
   }
   gotoUrl(link: string) : void {
     window.open(link, "_blank");
