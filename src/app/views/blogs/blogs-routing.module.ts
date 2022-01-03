@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: '',
    component: BlogsComponent,
    children: [
-     {path: 'list', component: BlogsListComponent, resolve: {blogGroups: BlogGroupResolver}},
+     {path: 'list', component: BlogsListComponent, resolve: {blogGroups: BlogGroupResolver},                 data: {title: ['مطالب و مقالات']},
+    },
      {path: 'blog/:blogId/:blogTitle',  component: BlogsViewComponent},
    ]
   },

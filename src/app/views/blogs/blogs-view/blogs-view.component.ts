@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Console } from 'console';
 import { Subscription } from 'rxjs';
+import { SeoService } from 'src/app/core/config/seoConfig/seo.service';
 import { BlogGroupService } from 'src/app/core/services/blog/blogGroup.service';
-
+import '../../../core/extensions/string.extension';
 @Component({
   selector: 'app-blogs-view',
   templateUrl: './blogs-view.component.html',
@@ -17,8 +18,11 @@ export class BlogsViewComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private blogService: BlogGroupService,
-    private router: Router
-  ) { }
+    private router: Router, 
+    private seoService: SeoService 
+  ) { 
+
+  }
 
   ngOnDestroy(): void {
       this.subManager.unsubscribe();
@@ -41,6 +45,13 @@ export class BlogsViewComponent implements OnInit, OnDestroy {
         }
       })
     );
+    this.seoService.generateTags({
+      title: this.blog.title,
+      description: this.blog.title,
+      keywords: this.blog.tags,
+      image: 'https://dr-payamabolhassani.com/images/og/opengraph.png',
+      url: '/blogs/' + this.blog.id + '/' + this.blog.title.toSeoString(),
+    });
   }
 
 }

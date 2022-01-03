@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DomainName } from 'src/app/core/config/pathUtility/pathTool';
+import { SeoService } from 'src/app/core/config/seoConfig/seo.service';
 import { BlogGroupService } from 'src/app/core/services/blog/blogGroup.service';
 import { FilterBlogDTO } from 'src/app/data/api/blog/FilterBlogDTO';
 
@@ -21,8 +22,17 @@ export class BlogsListComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute : ActivatedRoute, 
     private router: Router,
-    private blogService: BlogGroupService
-  ) { }
+    private blogService: BlogGroupService,
+    private seoService: SeoService
+  ) {
+    this.seoService.generateTags({
+      title: 'مطالب و مقالات',
+      description: 'دکتر پیام ابوالحسنی متخصص جراحی گوش و حلق و بینی',
+      keywords: 'جراحی بینی, زیبایی , رینوپلاستی , زیبایی بینی,دکتر خوب , نظرات,بینی گوشتی , بینی استخوانی  ,مراقبت بعد از عمل زیبایی  , پیام ابوالحسنی  ,بینی  , جراحی',
+      image: 'https://dr-payamabolhassani.com/images/og/opengraph.png',
+      url: '/blogs',
+    });
+   }
 
   ngOnInit() {
     

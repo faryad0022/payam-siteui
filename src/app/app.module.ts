@@ -16,6 +16,7 @@ import {
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from './core/config/interceptor/interceptor';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { TitleService } from './core/config/seoConfig/title.service';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
@@ -47,6 +48,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SweetAlert2Module.forRoot()
   ],
   providers: [
+    TitleService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,

@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { SeoService } from 'src/app/core/config/seoConfig/seo.service';
 import { BlogDTO } from 'src/app/data/api/blog/BlogDTO';
 import { MainPageDTO } from 'src/app/data/api/MainPage/MainPageDTO';
 import { Slider } from 'src/app/data/api/sliders/slider';
@@ -16,8 +17,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   latestBlog: BlogDTO[];
   constructor(
     private activatedRoute : ActivatedRoute, 
-
-  ) { }
+    private seoService: SeoService
+  ) { 
+    this.seoService.generateTags({
+      title: 'رینوپلاستی | دکتر پیام ابوالحسنی',
+      description: 'دکتر پیام ابوالحسنی متخصص جراحی گوش و حلق و بینی',
+      keywords: 'جراحی بینی, زیبایی , رینوپلاستی , زیبایی بینی,دکتر خوب , نظرات,بینی گوشتی , بینی استخوانی  ,مراقبت بعد از عمل زیبایی  , پیام ابوالحسنی  ,بینی  , جراحی',
+      image: 'https://dr-payamabolhassani.com/images/og/opengraph.png',
+      url: '',
+    });
+  }
   ngOnDestroy(): void {
     this.subManager.unsubscribe();
   }

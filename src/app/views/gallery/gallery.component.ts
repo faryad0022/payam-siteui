@@ -5,6 +5,7 @@ import { FilterGalleryDTO } from 'src/app/data/api/gallery/FilterGalleryDTO';
 import { ToastrService } from 'ngx-toastr';
 import { DomainName } from 'src/app/core/config/pathUtility/pathTool';
 import { Lightbox } from 'ngx-lightbox';
+import { SeoService } from 'src/app/core/config/seoConfig/seo.service';
 
 @Component({
   selector: 'app-gallery',
@@ -21,9 +22,16 @@ export class GalleryComponent implements OnInit {
     public _lightbox: Lightbox,
     private imageService: ImageService,
     private router: Router,
+    private seoService: SeoService,
     private activateRoute: ActivatedRoute,
     private toastr: ToastrService) {
-
+      this.seoService.generateTags({
+        title: 'نمونه جراحی بینی / عمل زیبایی',
+        description: 'دکتر پیام ابوالحسنی متخصص جراحی گوش و حلق و بینی',
+        keywords: 'جراحی بینی, زیبایی , رینوپلاستی , زیبایی بینی,دکتر خوب , نظرات,بینی گوشتی , بینی استخوانی  ,مراقبت بعد از عمل زیبایی  , پیام ابوالحسنی  ,بینی  , جراحی',
+        image: 'https://dr-payamabolhassani.com/images/og/opengraph.png',
+        url: '/gallery',
+      });
      }
 
   ngOnInit(): void {

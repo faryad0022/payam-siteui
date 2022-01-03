@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
+import { SeoService } from 'src/app/core/config/seoConfig/seo.service';
 import { AddressService } from 'src/app/core/services/address/address.service';
 import { ContactUsService } from 'src/app/core/services/contact-us/contact-us.service';
 import { AddressDTO } from 'src/app/data/api/address/addressDTO';
@@ -27,7 +28,16 @@ export class ContactUsComponent implements OnInit, OnDestroy {
     private contactUsService: ContactUsService,
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-  ) { }
+    private seoService: SeoService
+  ) { 
+    this.seoService.generateTags({
+      title: 'تماس با ما',
+      description: 'دکتر پیام ابوالحسنی متخصص جراحی گوش و حلق و بینی',
+      keywords: 'جراحی بینی, زیبایی , رینوپلاستی , زیبایی بینی,دکتر خوب , نظرات,بینی گوشتی , بینی استخوانی  ,مراقبت بعد از عمل زیبایی  , پیام ابوالحسنی  ,بینی  , جراحی',
+      image: 'https://dr-payamabolhassani.com/images/og/opengraph.png',
+      url: '/contactus',
+    });
+  }
 
   ngOnInit(): void {
     this.addressService.getAddresses().subscribe(res=> {
